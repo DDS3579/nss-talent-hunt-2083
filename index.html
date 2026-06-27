@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSS Talent Hunt 2083 — Official Recruitment Portal</title>
+  <meta name="description" content="The official recruitment portal of NSS Talent Hunt 2083. Register, pick your clubs, and join a year of creativity, competition and community." />
+  <meta name="theme-color" content="#2563EB" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="logo" aria-label="NSS Talent Hunt Home">
+        <span class="logo-mark">NSS</span>
+        <span class="logo-text">Talent Hunt <span class="muted">2083</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#clubs">Clubs</a>
+        <a href="#register" class="btn btn-primary btn-sm">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="hero-badge reveal">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Registrations Open · Batch 2083
+        </div>
+        <h1 id="heroTitle" class="hero-title reveal">
+          Find your stage.<br />
+          <span class="gradient-text">Own your talent.</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          NSS Talent Hunt 2083 is the official recruitment drive of NSS.
+          Pick your clubs, tell us what excites you, and step into a year of
+          creativity, competition and community.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#register" class="btn btn-primary">Start Registration</a>
+          <a href="#clubs" class="btn btn-ghost">Explore Clubs</a>
+        </div>
+
+        <div class="hero-stats reveal" role="list">
+          <div class="stat" role="listitem">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Clubs</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">900+</span>
+            <span class="stat-label">Students</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">3 min</span>
+            <span class="stat-label">To Apply</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs preview -->
+    <section class="clubs-preview" id="clubs" aria-labelledby="clubsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Six worlds, one stage</span>
+          <h2 id="clubsTitle">Choose what moves you</h2>
+          <p>You can pick up to three clubs. Make every choice count.</p>
+        </div>
+
+        <div class="club-grid">
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">✶</div>
+            <h3>Literature</h3>
+            <p>Words, voices, ideas that move rooms.</p>
+          </article>
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">⚽</div>
+            <h3>Sports &amp; Games</h3>
+            <p>Competition, discipline, and team spirit.</p>
+          </article>
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">⚛</div>
+            <h3>STEM</h3>
+            <p>Code, build, research, and ship.</p>
+          </article>
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">✎</div>
+            <h3>Arts &amp; Crafts</h3>
+            <p>Color, form, texture, and craft.</p>
+          </article>
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">❤</div>
+            <h3>Social &amp; Volunteering</h3>
+            <p>Lead with empathy and impact.</p>
+          </article>
+          <article class="club-tile reveal">
+            <div class="club-icon" aria-hidden="true">♪</div>
+            <h3>Entertainment</h3>
+            <p>Perform, entertain, electrify.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="register" id="register" aria-labelledby="registerTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Registration</span>
+          <h2 id="registerTitle">Let's get you registered</h2>
+          <p>Four quick steps. Take your time — your progress saves as you type.</p>
+        </div>
+
+        <div class="form-card glass reveal">
+          <!-- Step indicator -->
+          <div class="stepper" role="tablist" aria-label="Registration steps">
+            <div class="step-track" aria-hidden="true">
+              <div class="step-fill" id="stepFill"></div>
+            </div>
+            <ol class="step-list" id="stepList">
+              <li class="step active" data-step="1" role="tab" aria-selected="true" tabindex="0">
+                <span class="step-bullet">1</span>
+                <span class="step-label">Personal</span>
+              </li>
+              <li class="step" data-step="2" role="tab" aria-selected="false" tabindex="0">
+                <span class="step-bullet">2</span>
+                <span class="step-label">Clubs</span>
+              </li>
+              <li class="step" data-step="3" role="tab" aria-selected="false" tabindex="0">
+                <span class="step-bullet">3</span>
+                <span class="step-label">Questions</span>
+              </li>
+              <li class="step" data-step="4" role="tab" aria-selected="false" tabindex="0">
+                <span class="step-bullet">4</span>
+                <span class="step-label">Eagerness</span>
+              </li>
+            </ol>
+          </div>
+
+          <form id="registrationForm" novalidate>
+
+            <!-- ============== STEP 1 ============== -->
+            <fieldset class="form-step is-active" data-step="1" aria-hidden="false">
+              <legend class="step-title">Personal information</legend>
+              <p class="step-desc">Tell us who you are. This stays private to NSS.</p>
+
+              <div class="field">
+                <label for="fullName">Full name</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  autocomplete="name"
+                  placeholder="e.g. Aarav Sharma"
+                  required
+                  minlength="3"
+                  aria-describedby="fullNameError"
+                />
+                <small class="field-error" id="fullNameError" role="alert"></small>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="grade">Grade</label>
+                  <select id="grade" name="grade" required aria-describedby="gradeError">
+                    <option value="" disabled selected>Select grade</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                  </select>
+                  <small class="field-error" id="gradeError" role="alert"></small>
+                </div>
+
+                <div class="field">
+                  <label for="section">Section</label>
+                  <select id="section" name="section" required disabled aria-describedby="sectionError">
+                    <option value="" disabled selected>Select grade first</option>
+                  </select>
+                  <small class="field-error" id="sectionError" role="alert"></small>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="rollNumber">Roll number</label>
+                <input
+                  type="number"
+                  id="rollNumber"
+                  name="rollNumber"
+                  min="1"
+                  max="910"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="1 – 910"
+                  required
+                  aria-describedby="rollError"
+                />
+                <small class="field-error" id="rollError" role="alert"></small>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  placeholder="98XXXXXXXX"
+                  maxlength="10"
+                  required
+                  aria-describedby="phoneError"
+                />
+                <small class="field-hint">Nepali number, 10 digits, starts with 9.</small>
+                <small class="field-error" id="phoneError" role="alert"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                  aria-describedby="emailError"
+                />
+                <small class="field-error" id="emailError" role="alert"></small>
+              </div>
+
+              <div class="field">
+                <label for="socialContact">Instagram / WhatsApp</label>
+                <input
+                  type="text"
+                  id="socialContact"
+                  name="socialContact"
+                  placeholder="@handle or WhatsApp number"
+                  required
+                  aria-describedby="socialError"
+                />
+                <small class="field-error" id="socialError" role="alert"></small>
+              </div>
+
+              <div class="form-nav">
+                <span></span>
+                <button type="button" class="btn btn-primary next-btn" data-next="2">Continue</button>
+              </div>
+            </fieldset>
+
+            <!-- ============== STEP 2 ============== -->
+            <fieldset class="form-step" data-step="2" aria-hidden="true" disabled>
+              <legend class="step-title">Choose your clubs</legend>
+              <p class="step-desc">Pick up to 3 clubs that excite you the most.</p>
+
+              <div class="club-cards" id="clubCards" role="group" aria-label="Available clubs">
+                <!-- generated dynamically -->
+              </div>
+
+              <small class="club-counter" id="clubCounter" aria-live="polite">0 of 3 selected</small>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-ghost back-btn" data-back="1">Back</button>
+                <button type="button" class="btn btn-primary next-btn" data-next="3">Continue</button>
+              </div>
+            </fieldset>
+
+            <!-- ============== STEP 3 ============== -->
+            <fieldset class="form-step" data-step="3" aria-hidden="true" disabled>
+              <legend class="step-title">Tell us more</legend>
+              <p class="step-desc">A few questions about the clubs you chose.</p>
+
+              <div id="dynamicQuestions" aria-live="polite">
+                <p class="empty-note">Select clubs in Step 2 to see questions here.</p>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-ghost back-btn" data-back="2">Back</button>
+                <button type="button" class="btn btn-primary next-btn" data-next="4">Continue</button>
+              </div>
+            </fieldset>
+
+            <!-- ============== STEP 4 ============== -->
+            <fieldset class="form-step" data-step="4" aria-hidden="true" disabled>
+              <legend class="step-title">How eager are you?</legend>
+              <p class="step-desc">No wrong answers — be honest. We love fire.</p>
+
+              <div class="rating-wrap" role="radiogroup" aria-label="Eagerness rating from 1 to 5">
+                <div class="stars" id="stars" role="presentation">
+                  <!-- generated -->
+                </div>
+                <input type="hidden" id="eagerness" name="eagerness" required />
+                <p class="rating-label" id="ratingLabel" aria-live="polite">Tap a star</p>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-ghost back-btn" data-back="3">Back</button>
+                <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                  <span class="btn-label">Submit Registration</span>
+                  <span class="spinner" aria-hidden="true"></span>
+                </button>
+              </div>
+            </fieldset>
+
+          </form>
+
+          <!-- Submission error -->
+          <div class="form-alert" id="formAlert" role="alert" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SUCCESS SCREEN ============== -->
+    <section class="success-screen" id="successScreen" hidden aria-live="polite">
+      <div class="container">
+        <div class="success-card glass">
+          <div class="success-check" aria-hidden="true">
+            <svg viewBox="0 0 52 52" width="64" height="64">
+              <circle class="check-circle" cx="26" cy="26" r="24" fill="none" />
+              <path class="check-mark" fill="none" d="M14 27 l8 8 l16 -18" />
+            </svg>
+          </div>
+          <h2>Thank you!</h2>
+          <p class="success-message">Your registration has been recorded successfully.</p>
+
+          <div class="reg-id-wrap">
+            <span class="reg-id-label">Registration ID</span>
+            <span class="reg-id" id="regId">—</span>
+            <button type="button" class="copy-btn" id="copyId" aria-label="Copy registration ID">Copy</button>
+          </div>
+
+          <p class="success-footnote">
+            We look forward to seeing you at NSS Talent Hunt 2083.
+          </p>
+
+          <div class="signature">
+            <span class="signature-name">Divya D. Sharma</span>
+            <span class="signature-role">President, NSS</span>
+          </div>
+
+          <button type="button" class="btn btn-ghost" id="resetForm">Register another student</button>
+        </div>
+      </div>
+
+      <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2083 NSS Talent Hunt. Crafted with care.</span>
+        <span class="footer-credit">President · Divya D. Sharma</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
