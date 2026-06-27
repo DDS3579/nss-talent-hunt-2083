@@ -121,7 +121,7 @@
      ========================================================= */
   function buildClubCards() {
     clubCardsEl.innerHTML = CLUBS.map(c => `
-      <label class="club-card" data-club="${c.id}" tabindex="0" role="checkbox" aria-checked="false">
+      <div class="club-card" data-club="${c.id}" tabindex="0" role="checkbox" aria-checked="false">
         <input type="checkbox" name="clubs" value="${c.id}" />
         <span class="club-emoji" aria-hidden="true">${c.emoji}</span>
         <span class="club-info">
@@ -129,13 +129,12 @@
           <p>${c.blurb}</p>
         </span>
         <span class="club-check" aria-hidden="true">✓</span>
-      </label>
+      </div>
     `).join('');
 
     $$('.club-card').forEach(card => {
       const input = card.querySelector('input');
-      card.addEventListener('click', (e) => {
-        if (e.target === input) return;
+      card.addEventListener('click', () => {
         toggleClub(card, input);
       });
       card.addEventListener('keydown', (e) => {
@@ -144,7 +143,6 @@
           toggleClub(card, input);
         }
       });
-      input.addEventListener('change', () => syncClubCard(card, input));
     });
   }
 
@@ -525,17 +523,15 @@
         throw new Error('Supabase is not configured. Please set credentials in config.js.');
       }
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('registrations')
-        .insert([payload])
-        .select()
-        .single();
+        .insert([payload]);
 
       if (error) throw error;
 
       // Success
       state.submitted = true;
-      const id = (data && (data.id || data.reg_id || data.registration_id)) || generateFallbackId(payload);
+      const id = generateFallbackId(payload);
       showSuccess(id);
     } catch (err) {
       console.error(err);
@@ -666,10 +662,26 @@
      ========================================================= */
   function initScrollProgress() {
     const bar = $('#scrollProgress');
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    let limit = 0;
+
+    function updateLimit() {
       const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-      bar.style.width = (scrolled * 100) + '%';
+      limit = h.scrollHeight - h.clientHeight;
+    }
+
+    window.addEventListener('resize', updateLimit);
+    updateLimit();
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = limit > 0 ? (window.scrollY / limit) : 0;
+          bar.style.width = (scrolled * 100) + '%';
+          ticking = false;
+        });
+        ticking = true;
+      }
     }, { passive: true });
   }
 
@@ -681,9 +693,18 @@
           io.unobserve(en.target);
         }
       });
-    }, { threshold: 0.12 });
-    $$('.reveal').forEach((el, i) => {
-      el.style.transitionDelay = (i * 60) + 'ms';
+    }, { threshold: 0.1 });
+
+    // Stagger reveal elements relative to their closest section/container, not globally
+    const containers = $$('section, header, .club-grid, .form-card, .success-card');
+    containers.forEach(container => {
+      const reveals = Array.from(container.querySelectorAll(':scope > .reveal, :scope > * > .reveal'));
+      reveals.forEach((el, i) => {
+        el.style.transitionDelay = (i * 50) + 'ms';
+      });
+    });
+
+    $$('.reveal').forEach(el => {
       io.observe(el);
     });
   }
