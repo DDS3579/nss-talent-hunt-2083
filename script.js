@@ -24,7 +24,7 @@
     {
       id: "literature",
       name: "Literature",
-      emoji: "✶",
+      emoji: "🖋️",
       blurb: "Words, voices, ideas",
       question: "What domains interest you?",
       examples: "Creative Writing, Poetry, Public Speaking, Debate, Journalism",
@@ -53,7 +53,7 @@
     {
       id: "arts",
       name: "Arts & Crafts",
-      emoji: "✎",
+      emoji: "🎨",
       blurb: "Color, form & craft",
       question: "What arts interest you?",
       examples:
